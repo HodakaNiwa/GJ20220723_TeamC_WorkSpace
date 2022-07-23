@@ -5,16 +5,14 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    // ポーズメニュの要素
     [SerializeField] private GameObject _PausePanel;
-    // [SerializeField] private Button _PauseButton;
     [SerializeField] private Button _ResumeButton;
     [SerializeField] private Button _StageSelectButton;
 
-    // Start is called before the first frame update
     void Start()
     {
         _PausePanel.SetActive(false);
-        // _PauseButton.onClick.AddListener(pauseGame);
         _ResumeButton.onClick.AddListener(resumeGame);
         _StageSelectButton.onClick.AddListener(goToSelectStage);
     }
