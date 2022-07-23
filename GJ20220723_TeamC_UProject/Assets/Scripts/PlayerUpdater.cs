@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class PlasyerUpdater : MonoBehaviour
+public class PlayerUpdater : MonoBehaviour
 {
 
     public enum PlayerActionState
@@ -20,6 +20,9 @@ public class PlasyerUpdater : MonoBehaviour
     /// PlayerÇÃåªç›ÇÃActionä«óù
     /// </summary>
     public PlayerActionState ActionState = PlayerActionState.Idle;
+
+    public bool IsMove => ActionState == PlayerActionState.Move;
+    public bool IsJump => ActionState == PlayerActionState.Jump;
 
     public bool OnGround = false;
 
