@@ -31,13 +31,13 @@ public class RouletteManager : MonoBehaviour
     public float StartWaitTime = 1.0f;
     public float NextRouletteStartInterval = 1.0f;
     public float AllDecideWaitTime = 1.0f;
+    public float RouletteTime = 1.0f;
     #endregion
 
 
     #region 非公開フィールド
     private PartsController _partsController = null;
     private PartsEntry _nowRouletteEntry = null;
-    [SerializeField]
     private int _nowRoulettePartsIndex = 0;
     private eFlow _nowFlow = eFlow.Start;
     private float _elapsedCounter = .0f;
@@ -56,6 +56,7 @@ public class RouletteManager : MonoBehaviour
         if (PlayerObjectRef != null)
         {
             _partsController = PlayerObjectRef.GetComponent<PartsController>();
+            _partsController.SetRouletteSppedOnAllPartsEntry(RouletteTime);
         }
     }
 
@@ -148,11 +149,11 @@ public class RouletteManager : MonoBehaviour
     //==================================================================================
     private void FlowEvent_WaitRouletteStop()
     {
-        // TODO : 演出とかあればそれが終わるまで待つ
-        //if (!_nowRouletteEntry.IsStopRoulette)
-        //{
-        //    return;
-        //}
+        // ルーレット停止まで待つ
+        if (_nowRouletteEntry.RouletteComp.IsRoulette)
+        {
+            return;
+        }
 
         // インターバルを設ける
         ChangeFlow(eFlow.RouletteStopInterval);
@@ -172,7 +173,6 @@ public class RouletteManager : MonoBehaviour
             // 決定するパーツがもうないなら終了フローへ移行
             if (_nowRoulettePartsIndex >= (int)ePARTS.End)
             {
-                Debug.Log("全部決まった");
                 ChangeFlow(eFlow.AllDecide);
                 return;
             }
@@ -201,7 +201,6 @@ public class RouletteManager : MonoBehaviour
         if (_elapsedCounter >= AllDecideWaitTime)
         {
             // ゲーム画面に遷移
-            Debug.Log("ゲーム画面に遷移します");
         }
     }
     #endregion
@@ -236,12 +235,12 @@ public class RouletteManager : MonoBehaviour
         // ルーレット操作
         if (!isStop)
         {
-            entry.RouletteComp.StartRoulette();
+            entry.RouletteComp.StartRoulette((int)ePARTS.Max);
             _nowRouletteEntry = entry;
         }
         else
         {
-            entry.RouletteComp.EndRoulette();
+            entry.RouletteComp.RequestStopRoulette();
         }
     }
     #endregion

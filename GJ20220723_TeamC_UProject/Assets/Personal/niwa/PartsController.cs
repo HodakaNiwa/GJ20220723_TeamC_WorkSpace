@@ -11,8 +11,7 @@ public enum ePARTS
 {
     Invalid = -1,
 
-    Head,
-    Body,
+    Head_Body,
     Hand_L,
     Hand_R,
     Leg_L,
@@ -20,7 +19,7 @@ public enum ePARTS
     Ex_Boost,
 
     Max,
-    Start = Head,
+    Start = Head_Body,
     End = Max - 1,
 }
 
@@ -51,16 +50,8 @@ public class PartsEntry
 //==================================================================================
 public class PartsController : MonoBehaviour
 {
-    private readonly string[] _partsObjectNameArray =
-    {
-        "head",
-        "body",
-        "hand_L",
-        "hand_R",
-        "leg_L",
-        "leg_R",
-        "boost",
-    };
+    [SerializeField]
+    private string[] _partsObjectNameArray = new string[(int)ePARTS.Max];
 
     private Dictionary<int, PartsEntry> _partsEntryDict = new Dictionary<int, PartsEntry>();
 
@@ -135,6 +126,22 @@ public class PartsController : MonoBehaviour
     {
         var key = (int)partsEnum + 1;
         return _partsEntryDict.TryGetValue(key, out entry);
+    }
+
+
+    //==================================================================================
+    // <summary>
+    // すべてのパーツにルーレットの回転スピードを設定する
+    // </summary>
+    // <author> 丹羽 保貴(Niwa Hodaka)</author>
+    //==================================================================================
+    public void SetRouletteSppedOnAllPartsEntry(float speed)
+    {
+        foreach (var keyValuePair in _partsEntryDict)
+        {
+            keyValuePair.Value.RouletteComp.SetRouletteRollSpeed(speed);
+
+        }
     }
     #endregion
 }

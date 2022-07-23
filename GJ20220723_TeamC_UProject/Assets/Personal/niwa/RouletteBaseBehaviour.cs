@@ -16,6 +16,20 @@ using UnityEngine;
 //==================================================================================
 public class RouletteBaseBehaviour : MonoBehaviour
 {
+    public enum eMOVEDIRECTION
+    {
+        Invalid = -1,
+
+        Vertical,
+        Horizontal,
+
+        Max,
+
+        Start = Vertical,
+        End = Max - 1,
+    }
+
+
     #region 公開プロパティ
     /// <summary> 選択された番号 </summary>
     public int SelectedIdx => (int)_targetList[_selectedIdx];
@@ -30,9 +44,20 @@ public class RouletteBaseBehaviour : MonoBehaviour
     [SerializeField]
     protected float _rouletteRollTime = .0f;
 
-    /// <summary> ルーレットを回転させるか </summary>
+    /// <summary> ルーレットが回転中か </summary>
     [SerializeField]
     protected bool _isRoulette = false;
+
+    /// <summary> パーツ同士のオフセット </summary>
+    [SerializeField]
+    private float _rouletteOffset = .0f;
+
+    /// <summary> ルーレットの回転方向 </summary>
+    [SerializeField]
+    private eMOVEDIRECTION _rouletteMoveDirection = eMOVEDIRECTION.Vertical;
+
+    /// <summary> ルーレットの終了リクエストがされているか </summary>
+    private bool _isStopRouletteRequest = false;
     #endregion
 
 
@@ -50,6 +75,8 @@ public class RouletteBaseBehaviour : MonoBehaviour
 
     /// <summary> パーツのVM </summary>
     private PartsVMBaseBehaviour _partsVMComp = null;
+
+    private int _targetPartsIndex = 0;
     #endregion
 
 
@@ -84,11 +111,20 @@ public class RouletteBaseBehaviour : MonoBehaviour
 
         // カウンターを加算し、一定値に達したらランダムで選択番号設定
         _elapsedCounter += Time.deltaTime;
+        var moveValue = (_rouletteOffset / _rouletteRollTime) * Time.deltaTime;
+        _partsVMComp.MoveSpliteAll(_rouletteMoveDirection, moveValue);
         if (_elapsedCounter >= _rouletteRollTime)
         {
             _elapsedCounter = .0f;
-            _selectedIdx = (_selectedIdx + 1) % _targetList.Count;
-            _partsVMComp.UpdateVM(_selectedIdx);
+            if (_isStopRouletteRequest)
+            {
+                StopRoulette();
+                return;
+            }
+            else
+            {
+                _partsVMComp.SwapSplitePosition(_rouletteMoveDirection, _rouletteOffset);
+            }
         }
     }
     #endregion
@@ -112,7 +148,7 @@ public class RouletteBaseBehaviour : MonoBehaviour
     // </summary>
     // <author> 丹羽 保貴(Niwa Hodaka)</author>
     //==================================================================================
-    public bool StartRoulette()
+    public bool StartRoulette(int layer)
     {
         // 対象が0の場合は処理しない
         if (_targetList.Count <= 0)
@@ -123,6 +159,8 @@ public class RouletteBaseBehaviour : MonoBehaviour
 
         // フラグON
         _isRoulette = true;
+        _partsVMComp.ChangeVisibleExceptingSprite(true);
+        _partsVMComp.ChangeSpliteOrderInLayer(layer);
 
         return true;
     }
@@ -133,15 +171,38 @@ public class RouletteBaseBehaviour : MonoBehaviour
     // </summary>
     // <author> 丹羽 保貴(Niwa Hodaka)</author>
     //==================================================================================
-    public void EndRoulette()
+    public void RequestStopRoulette()
     {
         // フラグOFF
-        _isRoulette = false;
+        _isStopRouletteRequest = true;
 
-        // カウンターをリセット
-        _elapsedCounter = .0f;
+        // ターゲットパーツの番号を取得
+        var currentVMIndex = _partsVMComp.NextSwapSpriteIndex;
+        for (var i = 0; i < 2; ++i)
+        {
+            currentVMIndex = currentVMIndex - 1;
+            if (currentVMIndex < 0)
+            {
+                currentVMIndex = _partsVMComp.SourceTexNum - 1;
+            }
+        }
+        _targetPartsIndex = currentVMIndex;
+        var entry = _partsVMComp.GetVMEntry(currentVMIndex);
+        if (entry != null)
+        {
+            _selectedIdx = entry.BindedTexIndex;
+        }
+    }
 
-        Debug.Log("ルーレットストップ");
+    //==================================================================================
+    // <summary>
+    // ルーレットの回転スピード設定
+    // </summary>
+    // <author> 丹羽 保貴(Niwa Hodaka)</author>
+    //==================================================================================
+    public void SetRouletteRollSpeed(float speed)
+    {
+        _rouletteRollTime = speed;
     }
     #endregion
 
@@ -169,13 +230,36 @@ public class RouletteBaseBehaviour : MonoBehaviour
         _partsVMComp = GetComponent<PartsVMBaseBehaviour>();
         if (_partsVMComp != null)
         {
+            // 各テクスチャの番号を取得
             for (var i = 0; i < _partsVMComp.SourceTexNum; ++i)
             {
                 _targetList.Add(i);
             }
+
+            // ルーレットのパーツ素材オフセットを設定
+            _partsVMComp.SetRoulettePartsOffset(_rouletteMoveDirection, _rouletteOffset);
         }
 
         return true;
+    }
+
+    //==================================================================================
+    // <summary>
+    // ルーレット停止
+    // </summary>
+    // <author> 丹羽 保貴(Niwa Hodaka)</author>
+    //==================================================================================
+    public void StopRoulette()
+    {
+        // フラグOFF
+        _isRoulette = false;
+        _isStopRouletteRequest = false;
+        _partsVMComp.ChangeVisibleExceptingSprite(false);
+        _partsVMComp.ResetSpliteOrderInLayer();
+        _partsVMComp.BindResourceToCurrenVM(_selectedIdx);
+
+        // カウンターをリセット
+        _elapsedCounter = .0f;
     }
     #endregion
 }
