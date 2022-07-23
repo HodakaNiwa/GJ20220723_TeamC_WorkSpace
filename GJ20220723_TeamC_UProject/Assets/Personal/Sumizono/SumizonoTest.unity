@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3986953418700653878, guid: 9a11a59cd22ab0941af679e7b7c07225, type: 3}
       propertyPath: _JumpPower
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3986953418700653879, guid: 9a11a59cd22ab0941af679e7b7c07225, type: 3}
       propertyPath: m_Name

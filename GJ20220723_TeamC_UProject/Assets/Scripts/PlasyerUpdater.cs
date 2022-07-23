@@ -187,11 +187,16 @@ public class PlasyerUpdater : MonoBehaviour
     /// </summary>
     private void updatePosition()
     {
+        if (VerticalSpeed > JumpPower)
+        {   // ジャンプ以上のスピードで上に行く必要はないはず
+            VerticalSpeed = JumpPower;
+        }
+
         var position = gameObject.transform.position;
         var nextPosition = position + new Vector3(HorizontalSpeed, VerticalSpeed, 0.0f);
         gameObject.transform.position = nextPosition;
 
-
+        gameObject.transform.rotation = Quaternion.identity;
     }
 
     private bool isAnyLeftKeyDown()
