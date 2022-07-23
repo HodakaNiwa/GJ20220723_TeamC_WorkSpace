@@ -23,6 +23,8 @@ public class PlasyerUpdater : MonoBehaviour
 
     public bool OnGround = false;
 
+    public bool IsLookRight = false;
+
     private Rigidbody2D Rigidbody = null;
 
     #region Walk
@@ -69,6 +71,27 @@ public class PlasyerUpdater : MonoBehaviour
 
     #endregion Jump
 
+    #region Boost
+
+    public float BoostHorizontalPower => _BoostHorizontalPower;
+    [SerializeField]
+    private float _BoostHorizontalPower = 1.5f;
+
+
+    public float BoostVarticalPower => _BoostVarticalPower;
+    [SerializeField]
+    private float _BoostVarticalPower = 2.0f;
+
+
+    public float BoostTime => _BoostTime;
+    [SerializeField]
+    private float _BoostTime = 3.0f;
+
+    [SerializeField]
+    private float BoostTimer = 0.0f;
+
+    #endregion Boost
+
     // Start is called before the first frame update
     void Start()
     {
@@ -113,6 +136,13 @@ public class PlasyerUpdater : MonoBehaviour
                     break;
                 }
 
+                if (isShiftKeyDown())
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.AirBoost;
+                    break;
+                }
+
                 HorizontalSpeed = 0.0f;
                 VerticalSpeed = 0.0f;
 
@@ -133,10 +163,22 @@ public class PlasyerUpdater : MonoBehaviour
                     break;
                 }
 
+                if (isShiftKeyDown())
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.GroundBoost;
+                    break;
+                }
+
                 var accel = HorizontalAccel;
                 if (isAnyLeftKeyPress())
                 {
+                    IsLookRight = false;
                     accel *= -1;
+                }
+                else
+                {
+                    IsLookRight = true;
                 }
                 HorizontalSpeed = HorizontalSpeed + accel;
                 if (HorizontalSpeed >= MaxHorizontalSpeed)
@@ -150,26 +192,93 @@ public class PlasyerUpdater : MonoBehaviour
 
 
                     break;
+
+            case PlayerActionState.GroundBoost:
+
+                if (OnGround == false)
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.Fall;
+                    break;
+                }
+
+                if (!isShiftKeyPress())
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.Idle;
+                    break;
+                }
+
+                var power = BoostHorizontalPower;
+                if (IsLookRight == false)
+                {
+                    power += -1;
+                }
+
+                HorizontalSpeed = power;
+
+                BoostTimer += Time.deltaTime;
+                if (BoostTimer > BoostTime)
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.Idle;
+                    break;
+                }
+
+
+                break;
+
             case PlayerActionState.Jump:
 
                 if (VerticalSpeed <= 0.0f)
                 {
                     ActionState = PlayerActionState.Fall;
+                    break;
+                }
+
+                if (isShiftKeyDown())
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.AirBoost;
+                    break;
                 }
 
                 VerticalSpeed -= GravityPower;
 
-                JumpTimer += Time.deltaTime;
-               
-
                 break;
             case PlayerActionState.AirBoost:
+
+                if (!isShiftKeyPress())
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.Fall;
+                    break;
+                }
+
+                VerticalSpeed = BoostVarticalPower;
+
+                BoostTimer += Time.deltaTime;
+                if (BoostTimer > BoostTime)
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.Fall;
+                    break;
+                }
+
                 break;
             case PlayerActionState.Fall:
 
                 if (OnGround)
                 {
                     ActionState = PlayerActionState.Idle;
+                    break;
+                }
+
+                if (isShiftKeyDown())
+                {
+                    BoostTimer = 0.0f;
+                    ActionState = PlayerActionState.AirBoost;
+                    break;
                 }
 
 
@@ -197,7 +306,12 @@ public class PlasyerUpdater : MonoBehaviour
         gameObject.transform.position = nextPosition;
 
         gameObject.transform.rotation = Quaternion.identity;
+
+        var scaleX = IsLookRight ? 1 : -1;
+        gameObject.transform.localScale = new Vector3(scaleX, 1.0f, 1.0f);
     }
+
+    #region InputCheck
 
     private bool isAnyLeftKeyDown()
     {
@@ -218,6 +332,20 @@ public class PlasyerUpdater : MonoBehaviour
     {
         return Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A);
     }
+
+    private bool isShiftKeyDown()
+    {
+        return Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift);
+    }
+
+    private bool isShiftKeyPress()
+    {
+        return Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+    }
+
+    #endregion InputCheck
+
+
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
