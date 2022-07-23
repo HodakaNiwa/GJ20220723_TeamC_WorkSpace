@@ -114,9 +114,6 @@ public class RouletteBaseBehaviour : MonoBehaviour
     //==================================================================================
     public bool StartRoulette()
     {
-        // ‘ÎÛ‚Æ‚È‚é”Ô†ƒŠƒXƒg‚ğİ’è
-        _targetList.Clear();
-
         // ‘ÎÛ‚ª0‚Ìê‡‚Íˆ—‚µ‚È‚¢
         if (_targetList.Count <= 0)
         {

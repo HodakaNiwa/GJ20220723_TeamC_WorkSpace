@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rouletteRollTime: 0.1
-  _isRoulette: 1
+  _isRoulette: 0
   _selectedIdx: 0
   _targetList: 
 --- !u!114 &5644161526651072500

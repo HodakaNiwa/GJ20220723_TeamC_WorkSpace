@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5644161526651072502, guid: 3c916cec4d587a24c890609703e9b30a, type: 3}
       propertyPath: m_Name
-      value: right_leg
+      value: leg_L
       objectReference: {fileID: 0}
     - target: {fileID: 5644161526651072503, guid: 3c916cec4d587a24c890609703e9b30a, type: 3}
       propertyPath: m_Pivot.x
@@ -257,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5644161526651072502, guid: 3c916cec4d587a24c890609703e9b30a, type: 3}
       propertyPath: m_Name
-      value: left_leg
+      value: leg_R
       objectReference: {fileID: 0}
     - target: {fileID: 5644161526651072503, guid: 3c916cec4d587a24c890609703e9b30a, type: 3}
       propertyPath: m_Pivot.x
@@ -374,7 +374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291444986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 580.6688, y: 253.15761, z: -2.4188054}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -584,6 +584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 857164514}
+  - component: {fileID: 857164515}
   m_Layer: 0
   m_Name: manager
   m_TagString: Untagged
@@ -606,6 +607,19 @@ Transform:
   m_Father: {fileID: 291444987}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &857164515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857164513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c436f1ee0cf2f43b9a2f490096bbb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObjectRef: {fileID: 1436440651}
 --- !u!1 &919002173
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5644161526651072502, guid: 3c916cec4d587a24c890609703e9b30a, type: 3}
       propertyPath: m_Name
-      value: left_hand
+      value: hand_R
       objectReference: {fileID: 0}
     - target: {fileID: 5644161526651072503, guid: 3c916cec4d587a24c890609703e9b30a, type: 3}
       propertyPath: m_Pivot.x
@@ -991,6 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1436440652}
+  - component: {fileID: 1436440653}
   m_Layer: 0
   m_Name: temp_player
   m_TagString: Untagged
@@ -1020,6 +1035,18 @@ Transform:
   m_Father: {fileID: 919002177}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1436440653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436440651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b724f5613cf1f419cec7ebbf527a2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1504075352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1033,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5644161526651072502, guid: 3c916cec4d587a24c890609703e9b30a, type: 3}
       propertyPath: m_Name
-      value: right_hand
+      value: hand_L
       objectReference: {fileID: 0}
     - target: {fileID: 5644161526651072503, guid: 3c916cec4d587a24c890609703e9b30a, type: 3}
       propertyPath: m_Pivot.x
