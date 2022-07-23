@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
-{
-   public void onClickStartButton()
+{  
+   // ステージ遷移のボタン
+   public void onClickSceneChangeBtn(string SceneName)
    {
-        SceneManager.LoadScene("Stage1");
+      SceneManager.LoadScene(SceneName);
    }
 }
+   
