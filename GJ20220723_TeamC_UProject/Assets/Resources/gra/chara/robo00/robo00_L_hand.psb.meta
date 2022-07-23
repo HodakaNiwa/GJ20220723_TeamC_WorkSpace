@@ -347,7 +347,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 140
+      y: 142
       width: 85
       height: 82
     spriteID: c415ce3662165ae4291db16985a8e7d7
@@ -654,7 +654,7 @@ ScriptedImporter:
     - {x: 24, y: 25}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -541, y: -208}
+    uvTransform: {x: -541, y: -206}
   - name: L_hand02
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -860,7 +860,7 @@ ScriptedImporter:
     - {x: 14, y: 15}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -493, y: -395}
+    uvTransform: {x: -493, y: -393}
   characterData:
     bones:
     - name: bone_1
@@ -961,7 +961,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: c415ce3662165ae4291db16985a8e7d7
     layerID: 42
-    mosaicPosition: {x: 4, y: 140}
+    mosaicPosition: {x: 4, y: 142}
     flatten: 0
     isImported: 1
     isVisible: 1

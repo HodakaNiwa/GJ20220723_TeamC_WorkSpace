@@ -728,7 +728,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 181
+      x: 183
       y: 4
       width: 68
       height: 75
@@ -1014,7 +1014,7 @@ ScriptedImporter:
     - {x: 22, y: 23}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -249, y: -396}
+    uvTransform: {x: -247, y: -396}
   characterData:
     bones:
     - name: bone_1
@@ -1125,7 +1125,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 279d23287a73a0546aca8e05634a6537
     layerID: 42
-    mosaicPosition: {x: 181, y: 4}
+    mosaicPosition: {x: 183, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1

@@ -417,7 +417,7 @@ ScriptedImporter:
     - {x: 25, y: 26}
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -385, y: -319}
+    uvTransform: {x: -385, y: -321}
   - name: L_leg01
     originalName: 
     pivot: {x: 0.5, y: 0.5}
