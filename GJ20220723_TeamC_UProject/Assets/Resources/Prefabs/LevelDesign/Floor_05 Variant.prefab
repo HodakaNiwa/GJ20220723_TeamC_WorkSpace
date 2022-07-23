@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8102815592067764297
+--- !u!1001 &5927318658627562664
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,22 +10,14 @@ PrefabInstance:
     - target: {fileID: 5426492480852257172, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 76c9a69c246ee3441857052df4bb1c34, type: 3}
+      objectReference: {fileID: 21300000, guid: 35f6f0986cdba9f42a1535d92cb2bee3, type: 3}
     - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Size.x
-      value: 2.5782099
+      value: 2.5903192
       objectReference: {fileID: 0}
     - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Size.y
-      value: 2.5701532
-      objectReference: {fileID: 0}
-    - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.004773855
+      value: 2.5903192
       objectReference: {fileID: 0}
     - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -37,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8725295077542144422, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Name
-      value: Floor_01 Variant
+      value: Floor_05
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_RootOrder
