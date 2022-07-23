@@ -10,9 +10,7 @@ public class PlayerUpdater : MonoBehaviour
     {
         Idle, 
         Move,
-        GroundBoost,
         Jump,
-        AirBoost, 
         Fall,
     }
 
@@ -34,9 +32,9 @@ public class PlayerUpdater : MonoBehaviour
 
     public float HorizontalSpeed = 0.0f;
 
-    public float HorizontalAccel => _HorizontalAccel * Time.deltaTime;
+    public float MovePower => _MovePower * Time.deltaTime;
     [SerializeField]
-    private float _HorizontalAccel = 0.1f;
+    private float _MovePower = 0.1f;
     public float MaxHorizontalSpeed => _MaxHorizontalSpeed;
     [SerializeField]
     private float _MaxHorizontalSpeed = 1.0f;
@@ -53,15 +51,17 @@ public class PlayerUpdater : MonoBehaviour
     [SerializeField]
     private float _JumpSecond = 1.0f;
 
-    private float JumpTimer { get; set; } = 0.0f;
-
-
+    public float JumpTimer { get; private set; } = 0.0f;
 
     public float VerticalSpeed = 0.0f;
 
     public float JumpPower => _JumpPower * Time.deltaTime;
     [SerializeField]
     private float _JumpPower = 10.0f;
+
+    public float MovePowerInJump => _MovePowerInJump * Time.deltaTime;
+    [SerializeField]
+    private float _MovePowerInJump = 5.0f;
 
     public float GravityPower => _GravityPower * Time.deltaTime;
     [SerializeField]
@@ -74,26 +74,6 @@ public class PlayerUpdater : MonoBehaviour
 
     #endregion Jump
 
-    #region Boost
-
-    public float BoostHorizontalPower => _BoostHorizontalPower;
-    [SerializeField]
-    private float _BoostHorizontalPower = 1.5f;
-
-
-    public float BoostVarticalPower => _BoostVarticalPower;
-    [SerializeField]
-    private float _BoostVarticalPower = 2.0f;
-
-
-    public float BoostTime => _BoostTime;
-    [SerializeField]
-    private float _BoostTime = 3.0f;
-
-    [SerializeField]
-    private float BoostTimer = 0.0f;
-
-    #endregion Boost
 
     // Start is called before the first frame update
     void Start()
@@ -133,16 +113,7 @@ public class PlayerUpdater : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    JumpTimer = 0.0f;
-                    VerticalSpeed = JumpPower;
                     ActionState = PlayerActionState.Jump;
-                    break;
-                }
-
-                if (isShiftKeyDown())
-                {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.AirBoost;
                     break;
                 }
 
@@ -160,20 +131,11 @@ public class PlayerUpdater : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    JumpTimer = 0.0f;
-                    VerticalSpeed = JumpPower;
                     ActionState = PlayerActionState.Jump;
                     break;
                 }
 
-                if (isShiftKeyDown())
-                {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.GroundBoost;
-                    break;
-                }
-
-                var accel = HorizontalAccel;
+                var accel = MovePower;
                 if (isAnyLeftKeyPress())
                 {
                     IsLookRight = false;
@@ -183,109 +145,76 @@ public class PlayerUpdater : MonoBehaviour
                 {
                     IsLookRight = true;
                 }
-                HorizontalSpeed = HorizontalSpeed + accel;
-                if (HorizontalSpeed >= MaxHorizontalSpeed)
+
+                HorizontalSpeed = accel;
+
+                    break;
+
+            case PlayerActionState.Jump:
+
+                JumpTimer += Time.deltaTime;
+                if (JumpTimer > JumpSecond)
+                {
+                    ActionState = PlayerActionState.Fall;
+                    break;
+                }
+
+                if (!Input.GetKey(KeyCode.Space))
+                {
+                    ActionState = PlayerActionState.Fall;
+                    break;
+                }
+
+                VerticalSpeed = JumpPower;
+
+                var horizAccel = MovePowerInJump;
+                if (isAnyLeftKeyPress())
+                {
+                    IsLookRight = false;
+                    horizAccel *= -1;
+                }
+                else if (isAnyRightKeyPress())
+                {
+                    IsLookRight = true;
+                }
+                else 
+                {
+                    break;
+                }
+
+                HorizontalSpeed = HorizontalSpeed + horizAccel;
+                if (HorizontalSpeed > MaxHorizontalSpeed)
                 {
                     HorizontalSpeed = MaxHorizontalSpeed;
                 }
-                if (HorizontalSpeed <= -MaxHorizontalSpeed)
+                else if (HorizontalSpeed < -MaxHorizontalSpeed)
                 {
                     HorizontalSpeed = -MaxHorizontalSpeed;
                 }
 
-
-                    break;
-
-            case PlayerActionState.GroundBoost:
-
-                if (OnGround == false)
-                {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.Fall;
-                    break;
-                }
-
-                if (!isShiftKeyPress())
-                {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.Idle;
-                    break;
-                }
-
-                var power = BoostHorizontalPower;
-                if (IsLookRight == false)
-                {
-                    power += -1;
-                }
-
-                HorizontalSpeed = power;
-
-                BoostTimer += Time.deltaTime;
-                if (BoostTimer > BoostTime)
-                {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.Idle;
-                    break;
-                }
-
-
                 break;
-
-            case PlayerActionState.Jump:
-
-                if (VerticalSpeed <= 0.0f)
-                {
-                    ActionState = PlayerActionState.Fall;
-                    break;
-                }
-
-                if (isShiftKeyDown())
-                {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.AirBoost;
-                    break;
-                }
-
-                VerticalSpeed -= GravityPower;
-
-                break;
-            case PlayerActionState.AirBoost:
-
-                if (!isShiftKeyPress())
-                {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.Fall;
-                    break;
-                }
-
-                VerticalSpeed = BoostVarticalPower;
-
-                BoostTimer += Time.deltaTime;
-                if (BoostTimer > BoostTime)
-                {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.Fall;
-                    break;
-                }
-
-                break;
+          
             case PlayerActionState.Fall:
 
                 if (OnGround)
                 {
+                    JumpTimer = 0.0f;
                     ActionState = PlayerActionState.Idle;
                     break;
                 }
 
-                if (isShiftKeyDown())
+                if (Input.GetKeyDown(KeyCode.Space) && JumpTimer < JumpSecond)
                 {
-                    BoostTimer = 0.0f;
-                    ActionState = PlayerActionState.AirBoost;
+                    ActionState = PlayerActionState.Jump;
                     break;
                 }
 
-
                 VerticalSpeed -= GravityPower;
+                if (VerticalSpeed < -MaxVeriticalSpeed)
+                {
+                    VerticalSpeed = -MaxVeriticalSpeed;
+                }
+
 
                 break;
             default:
