@@ -289,8 +289,12 @@ public class PlayerUpdater : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-
             OnGround = true;
+        }
+
+        if (collision.gameObject.tag == "Finish")
+        {
+            IsGoal = true;
         }
     }
 
@@ -300,6 +304,12 @@ public class PlayerUpdater : MonoBehaviour
         {
 
             OnGround = true;
+        }
+
+        if (collision.gameObject.tag == "Finish")
+        {
+            OnGround = true;
+            ActionState = PlayerActionState.Idle;
         }
     }
 
