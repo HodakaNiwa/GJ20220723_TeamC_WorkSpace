@@ -77,6 +77,15 @@ public class ConstParentJointControll : MonoBehaviour
         LegRPart.transform.SetParent(gameObject.transform);
         LegLPart.transform.SetParent(gameObject.transform);
         BoosterPart.transform.SetParent(gameObject.transform);
+
+        var boostParam = BoosterPart.GetComponent<BoosterParam>();
+        var playerUpdater = GetComponent<PlayerUpdater>();
+        if (boostParam != null && playerUpdater != null)
+        {
+            playerUpdater.JumpPower = boostParam.BoostPower;
+            playerUpdater.JumpSecond = boostParam.BoostSec;
+        }
+        
     }
 
     // Update is called once per frame
