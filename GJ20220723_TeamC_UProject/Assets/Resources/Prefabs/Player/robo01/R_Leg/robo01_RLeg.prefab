@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4640861147277598730}
   - component: {fileID: 1607637116}
   - component: {fileID: 1607637117}
+  - component: {fileID: -41814265931376844}
   m_Layer: 0
   m_Name: robo01_RLeg
   m_TagString: Untagged
@@ -66,6 +67,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a321f9dd60e4bf14d90df71109bf164c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &-41814265931376844
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4640861147277598731}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011466712, y: -0.30386767}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.63306564, y: 0.87386614}
+  m_EdgeRadius: 0
 --- !u!1001 &4640861148075502169
 PrefabInstance:
   m_ObjectHideFlags: 0

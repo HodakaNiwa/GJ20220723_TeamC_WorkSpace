@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4853580388312614112}
   - component: {fileID: 548226142}
   - component: {fileID: 548226143}
+  - component: {fileID: 4900421604868618866}
   m_Layer: 0
   m_Name: robo01_Body
   m_TagString: Untagged
@@ -85,6 +86,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a321f9dd60e4bf14d90df71109bf164c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &4900421604868618866
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4853580388312614118}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06409329, y: 1.0057718}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1339588, y: 3.682058}
+  m_EdgeRadius: 0
 --- !u!1001 &4853580388405145233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3096886387550717788, guid: 881e02a7410f7fa4191bfb97affa9d97, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.2224294
+      value: 0.22242951
       objectReference: {fileID: 0}
     - target: {fileID: 3096886387550717788, guid: 881e02a7410f7fa4191bfb97affa9d97, type: 3}
       propertyPath: m_Bounds.m_Extent.x

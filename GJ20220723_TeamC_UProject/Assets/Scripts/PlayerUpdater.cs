@@ -26,9 +26,11 @@ public class PlayerUpdater : MonoBehaviour
 
     public bool OnGround = false;
 
-    public bool IsLookRight = false;
+    public bool IsLookRight = true;
 
     private Rigidbody2D Rigidbody = null;
+
+    public float GameTimer = 0.0f;
 
     #region Walk
 
@@ -49,7 +51,7 @@ public class PlayerUpdater : MonoBehaviour
     /// Jump 継続時間 この時間スペースキーを押し続けているとブーストに移行します
     /// スペースキーを放していたら 着地に移行します
     /// </summary>
-    public float JumpSecond => _JumpSecond;
+    public float JumpSecond {get => _JumpSecond; set => _JumpSecond = value; }
     [SerializeField]
     private float _JumpSecond = 1.0f;
 
@@ -57,7 +59,7 @@ public class PlayerUpdater : MonoBehaviour
 
     public float VerticalSpeed = 0.0f;
 
-    public float JumpPower => _JumpPower * Time.deltaTime;
+    public float JumpPower { get => _JumpPower * Time.deltaTime; set => _JumpSecond = value; }
     [SerializeField]
     private float _JumpPower = 10.0f;
 
@@ -77,11 +79,18 @@ public class PlayerUpdater : MonoBehaviour
     void Start()
     {
         Rigidbody = gameObject.GetComponent<Rigidbody2D>();
+
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (IsGoal == false)
+        {
+            GameTimer += Time.deltaTime;
+        }
+
         updateAction();
 
         updatePosition();
@@ -237,13 +246,6 @@ public class PlayerUpdater : MonoBehaviour
         // 角度更新
         var _Quaternion = Quaternion.identity;
         rb.rotation = _Quaternion.y;
-
-        if (ActionState == PlayerActionState.Jump)
-        {
-            var rot = VerticalSpeed * -30.0f;
-            rb.rotation = rot;
-        }
-
 
         var scaleX = IsLookRight ? 1 : -1;
         gameObject.transform.localScale = new Vector3(scaleX, 1.0f, 1.0f);
