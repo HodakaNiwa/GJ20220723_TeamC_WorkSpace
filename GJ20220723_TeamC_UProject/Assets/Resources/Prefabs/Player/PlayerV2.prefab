@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1098591916168457665}
   m_Layer: 0
   m_Name: PlayerV2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   IsGoal: 0
   OnGround: 0
   IsLookRight: 0
+  GameTimer: 0
   HorizontalSpeed: 0
   _MovePower: 15
   _MaxHorizontalSpeed: 1
