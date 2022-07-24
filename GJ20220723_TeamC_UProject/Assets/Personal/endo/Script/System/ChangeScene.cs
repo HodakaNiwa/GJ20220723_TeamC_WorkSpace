@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {  
-   // ステージ遷移のボタン
+   /// <summary>
+   /// Scene遷移を行う関数(引数はString)
+   /// </summary>
    public void onClickSceneChangeBtn(string SceneName)
    {
       SceneManager.LoadScene(SceneName);
