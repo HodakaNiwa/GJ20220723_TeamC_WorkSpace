@@ -601,10 +601,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 631068639}
     m_Modifications:
-    - target: {fileID: 580214434751659625, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 580214435112538513, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
       propertyPath: m_Name
       value: Button
@@ -692,66 +688,6 @@ PrefabInstance:
     - target: {fileID: 580214435112538514, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_Colors.m_PressedColor.b
-      value: 0.42922157
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_Colors.m_PressedColor.g
-      value: 0.9529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_Colors.m_PressedColor.r
-      value: 0.1568627
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_Colors.m_ColorMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.31372374
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.80281657
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.8867924
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: isActivating
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: ActivateButton, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 580214435112538515, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06a659b5a45698647bcc14c8880402f2, type: 3}
