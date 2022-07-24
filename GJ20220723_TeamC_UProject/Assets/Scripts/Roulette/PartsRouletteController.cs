@@ -160,7 +160,7 @@ public class PartsRouletteController : MonoBehaviour
 
             var vmBaseComp = instance.GetComponent<PartsVMBaseBehaviour>();
             vmBaseComp.InitVisible = false;
-            vmBaseComp.InitSpliteMaskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+            vmBaseComp.InitSpliteMaskInteraction = SpriteMaskInteraction.None;
             var newEntry = new RouletteEntry(vmBaseComp, i);
             newEntry.BindedPrefabIndex = target;
             _rouletteEntryList.Add(newEntry);
