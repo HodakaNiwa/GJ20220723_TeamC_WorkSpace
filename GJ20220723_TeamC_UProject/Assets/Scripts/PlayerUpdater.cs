@@ -22,6 +22,8 @@ public class PlayerUpdater : MonoBehaviour
     public bool IsMove => ActionState == PlayerActionState.Move;
     public bool IsJump => ActionState == PlayerActionState.Jump;
 
+    public bool IsGoal = false;
+
     public bool OnGround = false;
 
     public bool IsLookRight = false;
@@ -236,6 +238,13 @@ public class PlayerUpdater : MonoBehaviour
         var _Quaternion = Quaternion.identity;
         rb.rotation = _Quaternion.y;
 
+        if (ActionState == PlayerActionState.Jump)
+        {
+            var rot = VerticalSpeed * -30.0f;
+            rb.rotation = rot;
+        }
+
+
         var scaleX = IsLookRight ? 1 : -1;
         gameObject.transform.localScale = new Vector3(scaleX, 1.0f, 1.0f);
     }
@@ -282,10 +291,15 @@ public class PlayerUpdater : MonoBehaviour
         {
 
             OnGround = true;
+        }
+    }
 
-            if (JumpPower <= 0.0f)
-            {
-            }
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+
+            OnGround = true;
         }
     }
 

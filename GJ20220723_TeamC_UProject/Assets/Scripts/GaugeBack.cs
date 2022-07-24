@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoostGaugeController : MonoBehaviour
+public class GaugeBack : MonoBehaviour
 {
-
     private RectTransform RectTransform = null;
     public PlayerUpdater PlayerUpdater;
 
@@ -22,7 +21,7 @@ public class BoostGaugeController : MonoBehaviour
             return;
         }
 
-        var scaleY = PlayerUpdater.JumpSecond - PlayerUpdater.JumpTimer;
+        var scaleY = PlayerUpdater.JumpSecond;
         RectTransform.localScale = new Vector3(scaleY, 1.0f, 1.0f);
     }
 }
