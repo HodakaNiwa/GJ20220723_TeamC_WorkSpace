@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BoostFireDrawControl : MonoBehaviour
 {
-    public PlayerUpdater PlayerUpdater;
+    private PlayerUpdater PlayerUpdater;
     public SpriteRenderer Renderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerUpdater = gameObject.transform.parent.gameObject.GetComponent<PlayerUpdater>();
     }
 
     // Update is called once per frame
