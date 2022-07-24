@@ -63,10 +63,6 @@ public class PlayerUpdater : MonoBehaviour
     [SerializeField]
     private float _MovePowerInJump = 5.0f;
 
-    public float GravityPower => _GravityPower * Time.deltaTime;
-    [SerializeField]
-    private float _GravityPower = 0.98f;
-
 
     public float MaxVeriticalSpeed => _MaxVeriticalSpeed;
     [SerializeField]
@@ -209,7 +205,6 @@ public class PlayerUpdater : MonoBehaviour
                     break;
                 }
 
-                //VerticalSpeed -= GravityPower;
                 if (VerticalSpeed < -MaxVeriticalSpeed)
                 {
                     VerticalSpeed = -MaxVeriticalSpeed;
