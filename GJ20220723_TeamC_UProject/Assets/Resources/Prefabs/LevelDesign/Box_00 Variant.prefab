@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.7650576
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -69,15 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99ef305f4aab3e04994ecebdac54d44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MovableRange: 0.05
+  _BoxMovableRange: 0.05
