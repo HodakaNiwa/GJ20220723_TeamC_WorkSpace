@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1858907279877289375}
+  - component: {fileID: 3541381386203094268}
   m_Layer: 0
   m_Name: robo00_L_Leg
   m_TagString: Untagged
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858907279877289374}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.37, y: -1.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,6 +33,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3541381386203094268
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858907279877289374}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86cc2c5ab75062c4ba6d35fd8bfcc91f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1858907279099053793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,13 +108,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7221020487405985688, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.943245
+      objectReference: {fileID: 0}
+    - target: {fileID: -7221020487405985688, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000001192093
+      objectReference: {fileID: 0}
     - target: {fileID: 1934749492313216055, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: 0.0002847612
       objectReference: {fileID: 0}
     - target: {fileID: 1934749492313216055, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0
+      value: -0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 1934749492313216055, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -103,13 +132,17 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Extent.y
       value: 0.44999993
       objectReference: {fileID: 0}
+    - target: {fileID: 4257508509235537429, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.060879722
+      objectReference: {fileID: 0}
     - target: {fileID: 6745099569822973779, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -0.0009996891
+      value: -0.0009996295
       objectReference: {fileID: 0}
     - target: {fileID: 6745099569822973779, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.0018100142
+      value: -0.018190205
       objectReference: {fileID: 0}
     - target: {fileID: 6745099569822973779, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -125,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6844043162278814442, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.0020499825
+      value: 0.0020497441
       objectReference: {fileID: 0}
     - target: {fileID: 6844043162278814442, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -133,7 +166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6844043162278814442, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 0.60295
+      value: 0.6029502
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 5c58e5290a0e0334498fc4919aac8478, type: 3}

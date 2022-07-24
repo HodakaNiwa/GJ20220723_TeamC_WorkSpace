@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7572438515620621515}
+  - component: {fileID: 3541381387888466074}
   m_Layer: 0
   m_Name: robo00_LHand
   m_TagString: Untagged
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7572438515620621514}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.27, y: 2.87, z: -8.399543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,6 +33,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3541381387888466074
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7572438515620621514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2574094f1d23887479b16df65c5697c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7572438517219295401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,13 +112,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7221020487405985688, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.71434474
+      objectReference: {fileID: 0}
+    - target: {fileID: -7221020487405985688, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000004172325
+      objectReference: {fileID: 0}
     - target: {fileID: -3223996759121230334, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.14500035
+      value: 0.14500047
       objectReference: {fileID: 0}
     - target: {fileID: -3223996759121230334, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.25304037
+      value: -0.23303992
       objectReference: {fileID: 0}
     - target: {fileID: -3223996759121230334, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -123,17 +152,25 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Extent.y
       value: 0.4072851
       objectReference: {fileID: 0}
+    - target: {fileID: 311580695235782034, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5755731
+      objectReference: {fileID: 0}
+    - target: {fileID: 311580695235782034, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.000000022817403
+      objectReference: {fileID: 0}
     - target: {fileID: 8286359571639859411, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: -4.7378097
       objectReference: {fileID: 0}
     - target: {fileID: 8286359571639859411, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: 0.23161475
+      value: 0.23161495
       objectReference: {fileID: 0}
     - target: {fileID: 8286359571639859411, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 0.43528512
+      value: 0.4352849
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}

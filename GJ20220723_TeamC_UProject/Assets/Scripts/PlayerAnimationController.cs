@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlayerAnimationController : MonoBehaviour
 {
 
-    public PlayerUpdater PlayerUpdater;
+    private PlayerUpdater PlayerUpdater;
     private Animator Animator = null;
 
     // Start is called before the first frame update
     void Start()
     {
         Animator = gameObject.GetComponent<Animator>();
-        
+
+        PlayerUpdater = gameObject.transform.parent.gameObject.GetComponent<PlayerUpdater>();
     }
 
     // Update is called once per frame
