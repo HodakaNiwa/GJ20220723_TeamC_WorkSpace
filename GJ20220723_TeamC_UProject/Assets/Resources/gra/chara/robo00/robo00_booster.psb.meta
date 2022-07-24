@@ -100,9 +100,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 170
-      height: 289
-    spriteID: e0535a89dcde5734b8439c6ae20b1ca9
+      width: 164
+      height: 201
+    spriteID: 78388965082f77b4cb5a6d24d9c00585
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -111,7 +111,28 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -412, y: -302}
+    uvTransform: {x: -418, y: -390}
+  - name: booster_fire
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 213
+      width: 122
+      height: 117
+    spriteID: 24616fe5fa79f0c4a92b18a5a576fc9e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -412, y: -93}
   characterData:
     bones: []
     parts: []
@@ -146,9 +167,19 @@ ScriptedImporter:
     spriteName: booster
     isGroup: 0
     parentIndex: -1
-    spriteID: e0535a89dcde5734b8439c6ae20b1ca9
+    spriteID: 78388965082f77b4cb5a6d24d9c00585
     layerID: 38
     mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: booster_fire
+    spriteName: booster_fire
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 24616fe5fa79f0c4a92b18a5a576fc9e
+    layerID: 43
+    mosaicPosition: {x: 4, y: 213}
     flatten: 0
     isImported: 1
     isVisible: 1

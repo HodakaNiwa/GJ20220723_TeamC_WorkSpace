@@ -13,19 +13,19 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 24144fa3f04006e4888043e9b3caa5e8, type: 3}
     - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Size.x
-      value: 2.3301973
+      value: 2.5508528
       objectReference: {fileID: 0}
     - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Size.y
-      value: 2.3653884
+      value: 2.5860438
       objectReference: {fileID: 0}
     - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Offset.x
-      value: -0.10205221
+      value: 0.008275509
       objectReference: {fileID: 0}
     - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Offset.y
-      value: -0.11260939
+      value: -0.0022816658
       objectReference: {fileID: 0}
     - target: {fileID: 8641397965626044136, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -37,7 +37,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8725295077542144422, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Name
-      value: Floor_00
+      value: Floor_00 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_RootOrder
