@@ -209,7 +209,7 @@ public class PlayerUpdater : MonoBehaviour
                     break;
                 }
 
-                VerticalSpeed -= GravityPower;
+                //VerticalSpeed -= GravityPower;
                 if (VerticalSpeed < -MaxVeriticalSpeed)
                 {
                     VerticalSpeed = -MaxVeriticalSpeed;
@@ -233,11 +233,17 @@ public class PlayerUpdater : MonoBehaviour
             VerticalSpeed = JumpPower;
         }
 
-        var position = gameObject.transform.position;
-        var nextPosition = position + new Vector3(HorizontalSpeed, VerticalSpeed, 0.0f);
-        gameObject.transform.position = nextPosition;
+        // コンポーネント取得
+        Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
 
-        gameObject.transform.rotation = Quaternion.identity;
+        // 座標更新
+        var position = rb.position;
+        var nextPosition = position + new Vector2(HorizontalSpeed, VerticalSpeed);
+        rb.position = nextPosition;
+
+        // 角度更新
+        var _Quaternion = Quaternion.identity;
+        rb.rotation = _Quaternion.y;
 
         var scaleX = IsLookRight ? 1 : -1;
         gameObject.transform.localScale = new Vector3(scaleX, 1.0f, 1.0f);
