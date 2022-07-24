@@ -37,6 +37,8 @@ public class ResidentVisualizeHolder : SingletonBaseBehaviour<ResidentVisualizeH
     public int NextStageIndex = 0;
     public string[] StageScnNameArray;
 
+    public float GameTimer = .0f;
+
 
     #region Šî’ê
     //==================================================================================

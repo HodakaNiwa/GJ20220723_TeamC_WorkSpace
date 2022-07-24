@@ -35,7 +35,7 @@ public class PartsVMBaseBehaviour : MonoBehaviour
         {
             comp.Init();
             comp.MaskInteraction = InitSpliteMaskInteraction;
-            comp.enabled = InitVisible;
+            comp.SetVisible(InitVisible);
             _partsSpriteList.Add(comp);
         }
     }
