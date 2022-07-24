@@ -114,8 +114,12 @@ public class PlayerUpdater : MonoBehaviour
         {
             case PlayerActionState.Idle:
 
-                if (isAnyLeftKeyDown() || isAnyRightKeyDown())
+                if (isAnyLeftKeyDown() || isAnyRightKeyDown() ||
+                    isAnyLeftKeyPress() || isAnyRightKeyPress())
                 {
+
+                    HorizontalSpeed = 0.0f;
+                    VerticalSpeed = 0.0f;
                     ActionState = PlayerActionState.Move;
                     break;
                 }
@@ -186,7 +190,6 @@ public class PlayerUpdater : MonoBehaviour
                 if (isAnyLeftKeyPress())
                 {
                     IsLookRight = false;
-                    horizAccel *= -1;
                 }
                 else if (isAnyRightKeyPress())
                 {
@@ -197,7 +200,12 @@ public class PlayerUpdater : MonoBehaviour
                     break;
                 }
 
-                horizAccel += JumpPartsRate * 0.1f;
+                if (IsLookRight == false)
+                {
+                    horizAccel *= -1;
+                }
+
+                horizAccel += JumpPartsRate * 0.4f * Time.deltaTime;
 
                 HorizontalSpeed = HorizontalSpeed + horizAccel;
                 if (HorizontalSpeed > MaxHorizontalSpeed)

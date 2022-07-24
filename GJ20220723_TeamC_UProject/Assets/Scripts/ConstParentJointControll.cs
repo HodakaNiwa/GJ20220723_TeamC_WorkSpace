@@ -92,9 +92,9 @@ public class ConstParentJointControll : MonoBehaviour
             {
                 playerUpdater.JumpPartsRate = 0.0f;
                 playerUpdater.JumpPartPowerRate = 1.0f;
-            }else if (RHandID == 0)
+            }else if (RHandID == 2)
             {   // 1·‚ª‚ ‚é
-                if (LHandID == 1)
+                if (LHandID == 0)
                 {   // ‰E‚ª‘å‚«‚¢
                     playerUpdater.JumpPartsRate = 1.0f;
                     playerUpdater.JumpPartPowerRate = 1.0f;
@@ -105,9 +105,9 @@ public class ConstParentJointControll : MonoBehaviour
                     playerUpdater.JumpPartPowerRate = 1.0f;
                 }
             }
-            else if (RHandID == 1)
+            else if (RHandID == 0)
             {
-                if (LHandID == 0)
+                if (LHandID == 2)
                 {   // ¶‚ª‘å‚«‚¢ ·‚ª1
                     playerUpdater.JumpPartsRate = -1.0f;
                     playerUpdater.JumpPartPowerRate = 1.0f;
@@ -115,11 +115,11 @@ public class ConstParentJointControll : MonoBehaviour
                 else
                 {   // ¶‚ª‘å‚«‚¢ ·‚ª2
                     playerUpdater.JumpPartsRate = -1.2f;
-                    playerUpdater.JumpPartPowerRate = 1.5f;
+                    playerUpdater.JumpPartPowerRate = 1.2f;
                 }
-            }else if (RHandID == 2)
+            }else if (RHandID == 1)
             {
-                if (LHandID == 0)
+                if (LHandID == 2)
                 {   // ‰E‚ª‘å‚«‚¢ ·‚ª1
                     playerUpdater.JumpPartsRate = 1.0f;
                     playerUpdater.JumpPartPowerRate = 1.0f;
@@ -127,7 +127,7 @@ public class ConstParentJointControll : MonoBehaviour
                 else
                 {   // ‰E‚ª‘å‚«‚¢ ·‚ª2
                     playerUpdater.JumpPartsRate = 1.2f;
-                    playerUpdater.JumpPartPowerRate = 1.5f;
+                    playerUpdater.JumpPartPowerRate = 1.2f;
                 }
             }
 
