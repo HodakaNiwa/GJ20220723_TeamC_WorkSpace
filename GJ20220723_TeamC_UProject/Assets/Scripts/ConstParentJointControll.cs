@@ -86,6 +86,53 @@ public class ConstParentJointControll : MonoBehaviour
             playerUpdater.JumpSecond = boostParam.BoostSec;
         }
         
+        if (playerUpdater != null)
+        {
+            if (RHandID == LHandID)
+            {
+                playerUpdater.JumpPartsRate = 0.0f;
+                playerUpdater.JumpPartPowerRate = 1.0f;
+            }else if (RHandID == 0)
+            {   // 1·‚ª‚ ‚é
+                if (LHandID == 1)
+                {   // ‰E‚ª‘å‚«‚¢
+                    playerUpdater.JumpPartsRate = 1.0f;
+                    playerUpdater.JumpPartPowerRate = 1.0f;
+                }
+                else
+                {   // ¶‚ª‘å‚«‚¢
+                    playerUpdater.JumpPartsRate = -1.0f;
+                    playerUpdater.JumpPartPowerRate = 1.0f;
+                }
+            }
+            else if (RHandID == 1)
+            {
+                if (LHandID == 0)
+                {   // ¶‚ª‘å‚«‚¢ ·‚ª1
+                    playerUpdater.JumpPartsRate = -1.0f;
+                    playerUpdater.JumpPartPowerRate = 1.0f;
+                }
+                else
+                {   // ¶‚ª‘å‚«‚¢ ·‚ª2
+                    playerUpdater.JumpPartsRate = -1.2f;
+                    playerUpdater.JumpPartPowerRate = 1.5f;
+                }
+            }else if (RHandID == 2)
+            {
+                if (LHandID == 0)
+                {   // ‰E‚ª‘å‚«‚¢ ·‚ª1
+                    playerUpdater.JumpPartsRate = 1.0f;
+                    playerUpdater.JumpPartPowerRate = 1.0f;
+                }
+                else
+                {   // ‰E‚ª‘å‚«‚¢ ·‚ª2
+                    playerUpdater.JumpPartsRate = 1.2f;
+                    playerUpdater.JumpPartPowerRate = 1.5f;
+                }
+            }
+
+        }
+
     }
 
     // Update is called once per frame

@@ -21,6 +21,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = PlayerTransform.position + Offset;//, CameraSpeed);
+        var y = -0.6f;
+        var x = PlayerTransform.position.x;
+        gameObject.transform.position = new Vector3(x, y, -10f);//, CameraSpeed);
     }
 }

@@ -72,6 +72,9 @@ public class PlayerUpdater : MonoBehaviour
     [SerializeField]
     private float _MaxVeriticalSpeed = 2.0f;
 
+    public float JumpPartsRate = 0.0f;
+    public float JumpPartPowerRate = 1.0f;
+
     #endregion Jump
 
 
@@ -94,6 +97,11 @@ public class PlayerUpdater : MonoBehaviour
         updateAction();
 
         updatePosition();
+
+        if (gameObject.transform.position.y < -100.0f)
+        {
+            gameObject.transform.position = new Vector3(-22.5f, -13.0f, 0.0f);
+        }
     }
 
 
@@ -172,7 +180,7 @@ public class PlayerUpdater : MonoBehaviour
                     break;
                 }
 
-                VerticalSpeed = JumpPower;
+                VerticalSpeed = JumpPower * JumpPartPowerRate;
 
                 var horizAccel = MovePowerInJump;
                 if (isAnyLeftKeyPress())
@@ -184,10 +192,12 @@ public class PlayerUpdater : MonoBehaviour
                 {
                     IsLookRight = true;
                 }
-                else 
+                else if (JumpPartsRate == 0.0f) 
                 {
                     break;
                 }
+
+                horizAccel += JumpPartsRate * 0.1f;
 
                 HorizontalSpeed = HorizontalSpeed + horizAccel;
                 if (HorizontalSpeed > MaxHorizontalSpeed)
@@ -246,6 +256,12 @@ public class PlayerUpdater : MonoBehaviour
         // äpìxçXêV
         var _Quaternion = Quaternion.identity;
         rb.rotation = _Quaternion.y;
+        if (ActionState == PlayerActionState.Jump)
+        {
+            var rot = HorizontalSpeed * 30.0f;
+            rb.rotation = rot;
+        }
+
 
         var scaleX = IsLookRight ? 1 : -1;
         gameObject.transform.localScale = new Vector3(scaleX, 1.0f, 1.0f);
