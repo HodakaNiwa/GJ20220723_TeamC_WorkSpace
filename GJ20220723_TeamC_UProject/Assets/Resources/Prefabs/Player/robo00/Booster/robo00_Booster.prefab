@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1222957125684768494}
+  - component: {fileID: 4144473673281450553}
   m_Layer: 0
   m_Name: robo00_Booster
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4144473673281450553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222957125684768493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737b9918e5d130448b08655ea9769bd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderer: {fileID: 7428665165289596080}
 --- !u!1001 &1222957124883549318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87,10 +101,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7323459174054206483, guid: 6a5d05470445a8446b051452636374d6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: -581181379307362250, guid: 6a5d05470445a8446b051452636374d6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 6a5d05470445a8446b051452636374d6, type: 3}
 --- !u!4 &564928033125987672 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 6a5d05470445a8446b051452636374d6, type: 3}
+  m_PrefabInstance: {fileID: 1222957124883549318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7428665165289596080 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: -581181379307362250, guid: 6a5d05470445a8446b051452636374d6, type: 3}
   m_PrefabInstance: {fileID: 1222957124883549318}
   m_PrefabAsset: {fileID: 0}

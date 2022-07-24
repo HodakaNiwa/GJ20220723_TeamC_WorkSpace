@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PartsJointPositionSettings : MonoBehaviour
 {
+    public Vector3 SelfOffset => _SelfOffset;
+    [SerializeField]
+    private Vector3 _SelfOffset = new Vector3();
+
     public Vector3 HandROffset => _HandROffset;
     [SerializeField]
     private Vector3 _HandROffset = new Vector3();
