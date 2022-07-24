@@ -123,6 +123,40 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &300496797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 300496798}
+  m_Layer: 0
+  m_Name: DataHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &300496798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300496797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 930928507}
+  - {fileID: 1619395112}
+  - {fileID: 1728973701}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430969569
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,3 +258,159 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 482778973a9e47d479a477c55e6bcdd6, type: 3}
+--- !u!1 &930928506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 930928507}
+  - component: {fileID: 930928508}
+  m_Layer: 0
+  m_Name: robo_Visual_000
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &930928507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930928506}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 300496798}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &930928508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930928506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a567c6e0cf889204da0d195bd5452e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManageId: 0
+  PartsPrefab:
+  - {fileID: -8653719598885068355, guid: 2079f9c000876d048969b4940ffee20b, type: 3}
+  - {fileID: -8653719598885068355, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
+  - {fileID: -8653719598885068355, guid: 913a8b77ad690c546ba893ebe7e374a5, type: 3}
+  - {fileID: -8653719598885068355, guid: 286fd59a5b4436a41bfba06835393f78, type: 3}
+  - {fileID: -8653719598885068355, guid: a954dfa8c957c6b4ab7eb000bb7f63a3, type: 3}
+  - {fileID: -8653719598885068355, guid: 6a5d05470445a8446b051452636374d6, type: 3}
+--- !u!1 &1619395111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619395112}
+  - component: {fileID: 1619395113}
+  m_Layer: 0
+  m_Name: robo_Visual_001
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1619395112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619395111}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 300496798}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1619395113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619395111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a567c6e0cf889204da0d195bd5452e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManageId: 1
+  PartsPrefab:
+  - {fileID: -8653719598885068355, guid: 881e02a7410f7fa4191bfb97affa9d97, type: 3}
+  - {fileID: -8653719598885068355, guid: cba6965e56d13234fbc16a3b06db5c0e, type: 3}
+  - {fileID: -8653719598885068355, guid: 4e5f3f27f44efe44884ee0f55d4733f5, type: 3}
+  - {fileID: -8653719598885068355, guid: 7290be493b3d1434f8c8c1101a9f15d6, type: 3}
+  - {fileID: -8653719598885068355, guid: 7ccdd546f9415634e930677ab4b3052f, type: 3}
+  - {fileID: -8653719598885068355, guid: 4b85912fbaffc5a43b7f3db5150e6268, type: 3}
+--- !u!1 &1728973700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1728973701}
+  - component: {fileID: 1728973702}
+  m_Layer: 0
+  m_Name: robo_Visual_002
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1728973701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728973700}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 300496798}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1728973702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728973700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a567c6e0cf889204da0d195bd5452e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ManageId: 0
+  PartsPrefab:
+  - {fileID: -8653719598885068355, guid: 1ed2a77dcf1049847a0e0bed4b38bc58, type: 3}
+  - {fileID: -8653719598885068355, guid: df06ca6d4f4867b46a78d08e4cee828c, type: 3}
+  - {fileID: -8653719598885068355, guid: df06ca6d4f4867b46a78d08e4cee828c, type: 3}
+  - {fileID: -8653719598885068355, guid: d537a95bf11466d44b4cec2505e743de, type: 3}
+  - {fileID: -8653719598885068355, guid: 15ca3c6208d8d5245bd0e0bcdbcd7695, type: 3}
+  - {fileID: -8653719598885068355, guid: 150a5366f8bcfa647b5786eda99bde70, type: 3}

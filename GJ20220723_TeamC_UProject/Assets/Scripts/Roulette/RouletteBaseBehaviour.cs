@@ -73,8 +73,8 @@ public class RouletteBaseBehaviour : MonoBehaviour
     /// <summary> 時間計測用カウンター </summary>
     private float _elapsedCounter = .0f;
 
-    /// <summary> パーツのVM </summary>
-    private PartsVMBaseBehaviour _partsVMComp = null;
+    /// <summary> パーツのルーレットコントローラー </summary>
+    private PartsRouletteController _partsRouletteController = null;
 
     private int _targetPartsIndex = 0;
     #endregion
@@ -112,7 +112,7 @@ public class RouletteBaseBehaviour : MonoBehaviour
         // カウンターを加算し、一定値に達したらランダムで選択番号設定
         _elapsedCounter += Time.deltaTime;
         var moveValue = (_rouletteOffset / _rouletteRollTime) * Time.deltaTime;
-        _partsVMComp.MoveSpliteAll(_rouletteMoveDirection, moveValue);
+        _partsRouletteController.MovePartsAll(_rouletteMoveDirection, moveValue);
         if (_elapsedCounter >= _rouletteRollTime)
         {
             _elapsedCounter = .0f;
@@ -123,7 +123,7 @@ public class RouletteBaseBehaviour : MonoBehaviour
             }
             else
             {
-                _partsVMComp.SwapSplitePosition(_rouletteMoveDirection, _rouletteOffset);
+                _partsRouletteController.SwapPartsPosition(_rouletteMoveDirection, _rouletteOffset);
             }
         }
     }
@@ -159,8 +159,8 @@ public class RouletteBaseBehaviour : MonoBehaviour
 
         // フラグON
         _isRoulette = true;
-        _partsVMComp.ChangeVisibleExceptingSprite(true);
-        _partsVMComp.ChangeSpliteOrderInLayer(layer);
+        _partsRouletteController.ChangeVisibleExceptingSprite(true);
+        _partsRouletteController.ChangeSpliteOrderInLayer(layer);
 
         return true;
     }
@@ -177,20 +177,20 @@ public class RouletteBaseBehaviour : MonoBehaviour
         _isStopRouletteRequest = true;
 
         // ターゲットパーツの番号を取得
-        var currentVMIndex = _partsVMComp.NextSwapSpriteIndex;
+        var currentVMIndex = _partsRouletteController.NextSwapPrefabIndex;
         for (var i = 0; i < 2; ++i)
         {
             currentVMIndex = currentVMIndex - 1;
             if (currentVMIndex < 0)
             {
-                currentVMIndex = _partsVMComp.SourceTexNum - 1;
+                currentVMIndex = _partsRouletteController.SourcePrefabNum - 1;
             }
         }
         _targetPartsIndex = currentVMIndex;
-        var entry = _partsVMComp.GetVMEntry(currentVMIndex);
+        var entry = _partsRouletteController.GetRouletteEntry(currentVMIndex);
         if (entry != null)
         {
-            _selectedIdx = entry.BindedTexIndex;
+            _selectedIdx = entry.BindedPrefabIndex;
         }
     }
 
@@ -216,28 +216,15 @@ public class RouletteBaseBehaviour : MonoBehaviour
     //==================================================================================
     private bool Setup()
     {
-        // 念のためリストを初期化
-        _targetList.Clear();
-
-        // 外部ファイルから設定読み込み
-        if (!LoadRouletteConfig())
-        {
-            Debug.Log("設定読み込み失敗");
-            return false;
-        }
-
         // 各種コンポーネントを取得
-        _partsVMComp = GetComponent<PartsVMBaseBehaviour>();
-        if (_partsVMComp != null)
+        _partsRouletteController = GetComponent<PartsRouletteController>();
+        if (_partsRouletteController != null)
         {
-            // 各テクスチャの番号を取得
-            for (var i = 0; i < _partsVMComp.SourceTexNum; ++i)
-            {
-                _targetList.Add(i);
-            }
+            // パーツをInstanciateする
+            _partsRouletteController.InstanciateRouletteParts(_targetList);
 
             // ルーレットのパーツ素材オフセットを設定
-            _partsVMComp.SetRoulettePartsOffset(_rouletteMoveDirection, _rouletteOffset);
+            _partsRouletteController.SetRoulettePartsOffset(_rouletteMoveDirection, _rouletteOffset);
         }
 
         return true;
@@ -254,9 +241,9 @@ public class RouletteBaseBehaviour : MonoBehaviour
         // フラグOFF
         _isRoulette = false;
         _isStopRouletteRequest = false;
-        _partsVMComp.ChangeVisibleExceptingSprite(false);
-        _partsVMComp.ResetSpliteOrderInLayer();
-        _partsVMComp.BindResourceToCurrenVM(_selectedIdx);
+        _partsRouletteController.ChangeVisibleExceptingSprite(false);
+        _partsRouletteController.ResetSpliteOrderInLayer();
+        _partsRouletteController.SwapCurrentPartsResource(_selectedIdx);
 
         // カウンターをリセット
         _elapsedCounter = .0f;

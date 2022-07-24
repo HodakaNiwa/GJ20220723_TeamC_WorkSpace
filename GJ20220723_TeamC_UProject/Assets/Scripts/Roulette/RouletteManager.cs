@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //==================================================================================
 // <summary>
@@ -201,6 +202,22 @@ public class RouletteManager : MonoBehaviour
         if (_elapsedCounter >= AllDecideWaitTime)
         {
             // ƒQ[ƒ€‰æ–Ê‚É‘JˆÚ
+            if (ResidentVisualizeHolder.Instance != null)
+            {
+                for (var i = 0; i < (int)ePARTS.Max; ++i)
+                {
+                    var partsEnum = (ePARTS)i;
+                    if (_partsController.TryGetPartsEntry(partsEnum, out var entry))
+                    {
+                        ResidentVisualizeHolder.Instance.SetPartsVisualDataIndex(partsEnum, entry.RouletteComp.SelectedIdx);
+                    }
+                }
+
+
+                var index = ResidentVisualizeHolder.Instance.NextStageIndex;
+                var name = ResidentVisualizeHolder.Instance.StageScnNameArray[index];
+                SceneManager.LoadScene(name);
+            }
         }
     }
     #endregion

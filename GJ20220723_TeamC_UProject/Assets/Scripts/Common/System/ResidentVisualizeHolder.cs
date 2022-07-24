@@ -1,17 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-//==================================================================================
-// <summary>
-// パーツのビジュアルデータ
-// </summary>
-// <author> 丹羽 保貴(Niwa Hodaka)</author>
-//==================================================================================
-public class VisualData
-{
-    public GameObject[] PartsPrefab = new GameObject[0];
-}
+using UnityEngine.UI;
 
 //==================================================================================
 // <summary>
@@ -21,10 +11,29 @@ public class VisualData
 //==================================================================================
 public class ResidentVisualizeHolder : SingletonBaseBehaviour<ResidentVisualizeHolder>
 {
-    [SerializeField]
-    private VisualData[] _visualDataArray = new VisualData[0];
+    //==================================================================================
+    // <summary>
+    // パーツのビジュアルデータ
+    // </summary>
+    // <author> 丹羽 保貴(Niwa Hodaka)</author>
+    //==================================================================================
+    public class VisualData
+    {
+        public int ManageId { get; private set; } = -1;
+        public GameObject[] PartsPrefabs;
 
+        public VisualData(int manageId)
+        {
+            ManageId = manageId;
+        }
+    }
+
+    private List<VisualData> _visualDataList = new List<VisualData>();
     private int[] _partsIndexArray = new int[(int)ePARTS.Max];
+
+
+    public int NextStageIndex = 0;
+    public string[] StageScnNameArray;
 
 
     #region 基底
@@ -62,19 +71,53 @@ public class ResidentVisualizeHolder : SingletonBaseBehaviour<ResidentVisualizeH
     #region 公開メソッド
     //==================================================================================
     // <summary>
-    // パーツのビジュアル番号取得
+    // パーツのビジュアルデータ取得
     // </summary>
     // <author> 丹羽 保貴(Niwa Hodaka)</author>
     //==================================================================================
-    public int GetPartsVisualDataIndex(ePARTS partsEnum)
+    public bool TryGetPartsVisualDataIndex(ePARTS partsEnum, out VisualData visual)
     {
+        visual = null;
         var key = (int)partsEnum;
         if (key < 0 || key < (int)ePARTS.Max)
         {
-            return 0;
+            return false;
+        }
+        var index = _partsIndexArray[key];
+
+        if (index < 0 || index >= _visualDataList.Count)
+        {
+            return false;
+        }
+        visual = _visualDataList[index];
+
+        return true;
+    }
+
+    //==================================================================================
+    // <summary>
+    // パーツのビジュアルデータ取得
+    // </summary>
+    // <author> 丹羽 保貴(Niwa Hodaka)</author>
+    //==================================================================================
+    public bool TryGetPartsVisualDataIndex(ePARTS partsEnum, out GameObject partsPrefab)
+    {
+        partsPrefab = null;
+        var key = (int)partsEnum;
+        if (key < 0 || key < (int)ePARTS.Max)
+        {
+            return false;
         }
 
-        return _partsIndexArray[key];
+        var index = _partsIndexArray[key];
+        if (index < 0 || index >= _visualDataList.Count)
+        {
+            return false;
+        }
+        var visual = _visualDataList[index];
+        partsPrefab = visual.PartsPrefabs[key];
+
+        return true;
     }
 
     //==================================================================================
@@ -91,6 +134,19 @@ public class ResidentVisualizeHolder : SingletonBaseBehaviour<ResidentVisualizeH
             return;
         }
         _partsIndexArray[key] = index;
+    }
+
+    //==================================================================================
+    // <summary>
+    // ビジュアルデータの登録
+    // </summary>
+    // <author> 丹羽 保貴(Niwa Hodaka)</author>
+    //==================================================================================
+    public void RegisterVisualData(GameObject[] parts_array, int manageId)
+    {
+        var newData = new VisualData(manageId);
+        newData.PartsPrefabs = parts_array;
+        _visualDataList.Add(newData);
     }
     #endregion
 }
