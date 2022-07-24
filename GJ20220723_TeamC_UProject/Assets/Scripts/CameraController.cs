@@ -9,6 +9,9 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector3 Offset = new Vector3(0.0f, 3.0f, 0.0f);
 
+    [SerializeField]
+    private float CameraSpeed = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,6 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = PlayerTransform.position + Offset;
+        gameObject.transform.position = PlayerTransform.position + Offset;//, CameraSpeed);
     }
 }
