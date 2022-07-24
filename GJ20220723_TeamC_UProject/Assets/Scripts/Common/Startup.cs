@@ -11,6 +11,8 @@ using UnityEngine.SceneManagement;
 //==================================================================================
 public class Startup : MonoBehaviour
 {
+    public string NextBootScnName;
+
     #region Šî’ê
     //==================================================================================
     // <summary>
@@ -31,7 +33,7 @@ public class Startup : MonoBehaviour
     //==================================================================================
     void Update()
     {
-        SceneManager.LoadScene("TestRouletteScn_niwa");
+        SceneManager.LoadScene(NextBootScnName);
     }
     #endregion
 }

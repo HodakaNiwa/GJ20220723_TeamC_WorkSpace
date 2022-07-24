@@ -6,11 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Boot.unity
+    guid: d963a728fa84c4648ac87ee28a0a3f71
+  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: d7864f062b47c8741b2df8cff8428fde
   - enabled: 1
     path: Assets/Scenes/StageSelect.unity
     guid: ae33c754aa2f35741a158bbb8ba707af
+  - enabled: 1
+    path: Assets/Scenes/Roulette/RoboSlot_000.unity
+    guid: f0918f4b805db4d458d53b9e8a8fc705
   - enabled: 1
     path: Assets/Scenes/Stage/Stage1.unity
     guid: 1c051b4b2fafc6c42ae2f7932f39302a

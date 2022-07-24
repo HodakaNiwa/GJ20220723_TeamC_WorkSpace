@@ -32,6 +32,23 @@ public class ConstParentJointControll : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (ResidentVisualizeHolder.Instance != null)
+        {
+            BodyID = ResidentVisualizeHolder.Instance.GetPartsVisualDataIndex(ePARTS.Head_Body);
+            RHandID = ResidentVisualizeHolder.Instance.GetPartsVisualDataIndex(ePARTS.Hand_R);
+            LHandID = ResidentVisualizeHolder.Instance.GetPartsVisualDataIndex(ePARTS.Hand_L);
+            RLegID = ResidentVisualizeHolder.Instance.GetPartsVisualDataIndex(ePARTS.Leg_R);
+            LLegID = ResidentVisualizeHolder.Instance.GetPartsVisualDataIndex(ePARTS.Leg_L);
+            BoosterID = ResidentVisualizeHolder.Instance.GetPartsVisualDataIndex(ePARTS.Ex_Boost);
+
+            Debug.Log(BodyID);
+            Debug.Log(RHandID);
+            Debug.Log(LHandID);
+            Debug.Log(RLegID);
+            Debug.Log(LLegID);
+            Debug.Log(BoosterID);
+        }
+
         createParts();
 
         JointOssetSettings = BodyPart.GetComponent<PartsJointPositionSettings>();
@@ -42,8 +59,6 @@ public class ConstParentJointControll : MonoBehaviour
        LegLPart.transform.localPosition = JointOssetSettings.LegLOffset;
        LegRPart.transform.localPosition = JointOssetSettings.LegROffset;
        BoosterPart.transform.localPosition = JointOssetSettings.BoosterOffset;
-
-
     }
 
     private void createParts()

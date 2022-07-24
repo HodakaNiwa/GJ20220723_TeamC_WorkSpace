@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d189b7b6cadf78429f08de994d3c16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NextBootScnName: Title
 --- !u!4 &430969571
 Transform:
   m_ObjectHideFlags: 0
@@ -255,6 +256,22 @@ PrefabInstance:
     - target: {fileID: 5370332904817832033, guid: 482778973a9e47d479a477c55e6bcdd6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370332904817832038, guid: 482778973a9e47d479a477c55e6bcdd6, type: 3}
+      propertyPath: StageScnNameArray.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370332904817832038, guid: 482778973a9e47d479a477c55e6bcdd6, type: 3}
+      propertyPath: StageScnNameArray.Array.data[0]
+      value: Stage1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370332904817832038, guid: 482778973a9e47d479a477c55e6bcdd6, type: 3}
+      propertyPath: StageScnNameArray.Array.data[1]
+      value: Stage2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370332904817832038, guid: 482778973a9e47d479a477c55e6bcdd6, type: 3}
+      propertyPath: StageScnNameArray.Array.data[2]
+      value: Stage3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 482778973a9e47d479a477c55e6bcdd6, type: 3}
@@ -406,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a567c6e0cf889204da0d195bd5452e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ManageId: 0
+  ManageId: 2
   PartsPrefab:
   - {fileID: -8653719598885068355, guid: 1ed2a77dcf1049847a0e0bed4b38bc58, type: 3}
   - {fileID: -8653719598885068355, guid: df06ca6d4f4867b46a78d08e4cee828c, type: 3}

@@ -29,6 +29,8 @@ public class ResidentVisualizeHolder : SingletonBaseBehaviour<ResidentVisualizeH
     }
 
     private List<VisualData> _visualDataList = new List<VisualData>();
+
+    [SerializeField]
     private int[] _partsIndexArray = new int[(int)ePARTS.Max];
 
 
@@ -75,49 +77,16 @@ public class ResidentVisualizeHolder : SingletonBaseBehaviour<ResidentVisualizeH
     // </summary>
     // <author> ’O‰H •Û‹M(Niwa Hodaka)</author>
     //==================================================================================
-    public bool TryGetPartsVisualDataIndex(ePARTS partsEnum, out VisualData visual)
+    public int GetPartsVisualDataIndex(ePARTS partsEnum)
     {
-        visual = null;
         var key = (int)partsEnum;
-        if (key < 0 || key < (int)ePARTS.Max)
+        if (key < 0 || key >= (int)ePARTS.Max)
         {
-            return false;
+            return 0;
         }
         var index = _partsIndexArray[key];
 
-        if (index < 0 || index >= _visualDataList.Count)
-        {
-            return false;
-        }
-        visual = _visualDataList[index];
-
-        return true;
-    }
-
-    //==================================================================================
-    // <summary>
-    // ƒp[ƒc‚ÌƒrƒWƒ…ƒAƒ‹ƒf[ƒ^æ“¾
-    // </summary>
-    // <author> ’O‰H •Û‹M(Niwa Hodaka)</author>
-    //==================================================================================
-    public bool TryGetPartsVisualDataIndex(ePARTS partsEnum, out GameObject partsPrefab)
-    {
-        partsPrefab = null;
-        var key = (int)partsEnum;
-        if (key < 0 || key < (int)ePARTS.Max)
-        {
-            return false;
-        }
-
-        var index = _partsIndexArray[key];
-        if (index < 0 || index >= _visualDataList.Count)
-        {
-            return false;
-        }
-        var visual = _visualDataList[index];
-        partsPrefab = visual.PartsPrefabs[key];
-
-        return true;
+        return index;
     }
 
     //==================================================================================
@@ -129,7 +98,7 @@ public class ResidentVisualizeHolder : SingletonBaseBehaviour<ResidentVisualizeH
     public void SetPartsVisualDataIndex(ePARTS partsEnum, int index)
     {
         var key = (int)partsEnum;
-        if (key < 0 || key < (int)ePARTS.Max)
+        if (key < 0 || key >= (int)ePARTS.Max)
         {
             return;
         }
