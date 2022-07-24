@@ -1,5 +1,89 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &469281142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 469281143}
+  - component: {fileID: 469281145}
+  - component: {fileID: 469281144}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &469281143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469281142}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3541381387343759912}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &469281145
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469281142}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 10
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &469281144
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469281142}
+  m_Enabled: 1
 --- !u!1 &3541381387343759914
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +115,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 469281143}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,12 +132,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6349be4014928214abb5206d9a24456f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HeadParts: {fileID: 0}
-  HandRParts: {fileID: 0}
-  HandLParts: {fileID: 0}
-  LegRParts: {fileID: 0}
-  LegLParts: {fileID: 0}
-  BoosterParts: {fileID: 0}
+  BodyID: 0
+  RHandID: 1
+  LHandID: 0
+  RLegID: 1
+  LLegID: 0
+  BoosterID: 0
+  BodyParts:
+  - {fileID: 9171882048633381112, guid: 09abdc4ef9c44ad4f90d6add587a0879, type: 3}
+  - {fileID: 4853580388312614118, guid: adfe8749e2ba2b74c80bbcd27904970f, type: 3}
+  RHandParts:
+  - {fileID: 2267809457056059244, guid: b06188d29ae269a42b777c27bd5957be, type: 3}
+  - {fileID: 9167708603139019306, guid: 63723d8ec66a84e47ab6747c6d769da3, type: 3}
+  LHandParts:
+  - {fileID: 7572438515620621514, guid: 039c139b7da0a6d46b267eb5d604d935, type: 3}
+  - {fileID: 8362654040110144627, guid: dc9d4ea5a1449e04ea293290dace9463, type: 3}
+  RLegParts:
+  - {fileID: 8734367793282231815, guid: a8b5c6786a7596e4398d2c4896d63211, type: 3}
+  - {fileID: 4640861147277598731, guid: 53cd291f542d9624aa108903b52a487f, type: 3}
+  LLegParts:
+  - {fileID: 1858907279877289374, guid: 0de5217bbfdc429489f650d81c8ea12c, type: 3}
+  - {fileID: 583826715878550966, guid: c535970417046c14a90a9ffcd421729c, type: 3}
+  BoosterParts:
+  - {fileID: 1222957125684768493, guid: bc5c85c4d483d894e926b91b0a2d3e82, type: 3}
+  - {fileID: 6929104537090743142, guid: 42f6737fd6aaf55469fb18937e8fc79e, type: 3}
 --- !u!114 &3020895578857120635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,14 +172,14 @@ MonoBehaviour:
   OnGround: 0
   IsLookRight: 0
   HorizontalSpeed: 0
-  _MovePower: 0.1
+  _MovePower: 15
   _MaxHorizontalSpeed: 1
   _JumpSecond: 1
   VerticalSpeed: 0
-  _JumpPower: 10
-  _MovePowerInJump: 5
+  _JumpPower: 40
+  _MovePowerInJump: 0.5
   _GravityPower: 0.98
-  _MaxVeriticalSpeed: 2
+  _MaxVeriticalSpeed: 1.5
 --- !u!61 &508137971927141003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118,9 +221,9 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 9.81
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0

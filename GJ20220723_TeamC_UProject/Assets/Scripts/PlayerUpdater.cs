@@ -63,10 +63,6 @@ public class PlayerUpdater : MonoBehaviour
     [SerializeField]
     private float _MovePowerInJump = 5.0f;
 
-    public float GravityPower => _GravityPower * Time.deltaTime;
-    [SerializeField]
-    private float _GravityPower = 0.98f;
-
 
     public float MaxVeriticalSpeed => _MaxVeriticalSpeed;
     [SerializeField]
@@ -209,7 +205,6 @@ public class PlayerUpdater : MonoBehaviour
                     break;
                 }
 
-                VerticalSpeed -= GravityPower;
                 if (VerticalSpeed < -MaxVeriticalSpeed)
                 {
                     VerticalSpeed = -MaxVeriticalSpeed;
@@ -233,11 +228,17 @@ public class PlayerUpdater : MonoBehaviour
             VerticalSpeed = JumpPower;
         }
 
-        var position = gameObject.transform.position;
-        var nextPosition = position + new Vector3(HorizontalSpeed, VerticalSpeed, 0.0f);
-        gameObject.transform.position = nextPosition;
+        // コンポーネント取得
+        Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
 
-        gameObject.transform.rotation = Quaternion.identity;
+        // 座標更新
+        var position = rb.position;
+        var nextPosition = position + new Vector2(HorizontalSpeed, VerticalSpeed);
+        rb.position = nextPosition;
+
+        // 角度更新
+        var _Quaternion = Quaternion.identity;
+        rb.rotation = _Quaternion.y;
 
         var scaleX = IsLookRight ? 1 : -1;
         gameObject.transform.localScale = new Vector3(scaleX, 1.0f, 1.0f);
@@ -247,22 +248,22 @@ public class PlayerUpdater : MonoBehaviour
 
     private bool isAnyLeftKeyDown()
     {
-        return Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.D);
+        return Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
     }
 
     private bool isAnyRightKeyDown()
     {
-        return Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.A);
+        return Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
     }
 
     private bool isAnyLeftKeyPress()
     {
-        return Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D);
+        return Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
     }
 
     private bool isAnyRightKeyPress()
     {
-        return Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A);
+        return Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
     }
 
     private bool isShiftKeyDown()
