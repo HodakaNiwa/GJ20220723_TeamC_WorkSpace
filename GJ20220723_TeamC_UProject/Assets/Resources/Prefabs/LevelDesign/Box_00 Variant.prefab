@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8725295077542144422, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_Name
-      value: Box_00
+      value: Box_00 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8996532438205066488, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
       propertyPath: m_RootOrder
@@ -93,3 +93,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
+--- !u!1 &8208937949092827975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725295077542144422, guid: 536556d344aa57740b95220aeb014bcd, type: 3}
+  m_PrefabInstance: {fileID: 646961672484551393}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1156644825790681503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8208937949092827975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ef305f4aab3e04994ecebdac54d44d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MovableRange: 0.05
