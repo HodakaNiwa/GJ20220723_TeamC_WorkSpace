@@ -47,11 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0f7776e92d4f445b78a2e1f60c9bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _SelfOffset: {x: 0, y: 0, z: 0}
   _HandROffset: {x: -1.12, y: 1.29, z: 0}
   _HandLOffset: {x: 0.86, y: 1.18, z: 0}
   _LegROffset: {x: -0.69, y: -0.74, z: 0}
   _LegLOffset: {x: 0.41, y: -0.8, z: 0}
-  _BoosterOffset: {x: 0, y: -6.57, z: 0}
+  _BoosterOffset: {x: -0.37, y: 2.4, z: 0}
 --- !u!95 &548226142
 Animator:
   serializedVersion: 4
