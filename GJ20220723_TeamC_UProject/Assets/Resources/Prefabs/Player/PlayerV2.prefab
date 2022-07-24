@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6349be4014928214abb5206d9a24456f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BodyID: 0
-  RHandID: 0
-  LHandID: 0
-  RLegID: 0
-  LLegID: 0
-  BoosterID: 0
+  BodyID: 2
+  RHandID: 1
+  LHandID: 2
+  RLegID: 1
+  LLegID: 2
+  BoosterID: 2
   BodyParts:
   - {fileID: 9171882048633381112, guid: 09abdc4ef9c44ad4f90d6add587a0879, type: 3}
   - {fileID: 4853580388312614118, guid: adfe8749e2ba2b74c80bbcd27904970f, type: 3}
@@ -100,7 +100,9 @@ MonoBehaviour:
   VerticalSpeed: 0
   _JumpPower: 40
   _MovePowerInJump: 0.5
-  _MaxVeriticalSpeed: 1.5
+  _MaxVeriticalSpeed: 0.3
+  JumpPartsRate: 0
+  JumpPartPowerRate: 1
 --- !u!50 &1098591916168457665
 Rigidbody2D:
   serializedVersion: 4
