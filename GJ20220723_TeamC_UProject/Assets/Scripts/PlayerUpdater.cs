@@ -247,22 +247,22 @@ public class PlayerUpdater : MonoBehaviour
 
     private bool isAnyLeftKeyDown()
     {
-        return Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.D);
+        return Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A);
     }
 
     private bool isAnyRightKeyDown()
     {
-        return Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.A);
+        return Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D);
     }
 
     private bool isAnyLeftKeyPress()
     {
-        return Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D);
+        return Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A);
     }
 
     private bool isAnyRightKeyPress()
     {
-        return Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A);
+        return Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
     }
 
     private bool isShiftKeyDown()
