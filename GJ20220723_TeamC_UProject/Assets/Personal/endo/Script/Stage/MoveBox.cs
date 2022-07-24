@@ -6,7 +6,7 @@ public class MoveBox : MonoBehaviour
 {
     // Box‚ÌˆÚ“®•
     [SerializeField]
-    private float _MovableRange = 0.1f;
+    private float _BoxMovableRange = 0.1f;
 
     void Update()
     {
@@ -25,6 +25,6 @@ public class MoveBox : MonoBehaviour
         float sin = Mathf.Sin(Time.time);
 
         // À•WXV
-        this.transform.position = new Vector3(_BoxPos.x + sin * _MovableRange, _BoxPos.y, 0.0f);
+        this.transform.position = new Vector3(_BoxPos.x + sin * _BoxMovableRange, _BoxPos.y, 0.0f);
     }
 }
