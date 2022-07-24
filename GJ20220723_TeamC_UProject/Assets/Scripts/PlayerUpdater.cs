@@ -205,12 +205,6 @@ public class PlayerUpdater : MonoBehaviour
                     break;
                 }
 
-                if (VerticalSpeed < -MaxVeriticalSpeed)
-                {
-                    VerticalSpeed = -MaxVeriticalSpeed;
-                }
-
-
                 break;
             default:
                 break;
@@ -230,6 +224,8 @@ public class PlayerUpdater : MonoBehaviour
 
         // コンポーネント取得
         Rigidbody2D rb = this.GetComponent<Rigidbody2D>();
+
+        rb.gravityScale = IsJump ? 0.0f : 9.81f;
 
         // 座標更新
         var position = rb.position;

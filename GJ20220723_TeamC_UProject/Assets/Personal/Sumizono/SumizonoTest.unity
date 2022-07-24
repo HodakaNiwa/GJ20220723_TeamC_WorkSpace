@@ -222,7 +222,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3020895578857120635, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: _JumpPower
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3020895578857120635, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: _MovePower
@@ -294,11 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: BodyID
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: LLegID
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: RLegID
@@ -306,35 +306,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: LHandID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
-      propertyPath: RHandID
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
-      propertyPath: BoosterID
+      propertyPath: RHandID
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
+      propertyPath: BoosterID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: BodyParts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: LLegParts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: RLegParts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: LHandParts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: RHandParts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: BodyParts.Array.data[0]
@@ -345,8 +345,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4853580388312614118, guid: adfe8749e2ba2b74c80bbcd27904970f, type: 3}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
+      propertyPath: BodyParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 553647288615846214, guid: 90cce5875851ed24093f98782eda42ca, type: 3}
+    - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: BoosterParts.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: LLegParts.Array.data[0]
@@ -357,6 +361,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 583826715878550966, guid: c535970417046c14a90a9ffcd421729c, type: 3}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
+      propertyPath: LLegParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 6944830605131001491, guid: 33bf1d02a33b84342b759886c06869b5, type: 3}
+    - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: RLegParts.Array.data[0]
       value: 
       objectReference: {fileID: 8734367793282231815, guid: a8b5c6786a7596e4398d2c4896d63211, type: 3}
@@ -364,6 +372,10 @@ PrefabInstance:
       propertyPath: RLegParts.Array.data[1]
       value: 
       objectReference: {fileID: 4640861147277598731, guid: 53cd291f542d9624aa108903b52a487f, type: 3}
+    - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
+      propertyPath: RLegParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 4384277094728514426, guid: 45480a2c539bacc4b993e098263f4efc, type: 3}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: LHandParts.Array.data[0]
       value: 
@@ -373,6 +385,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8362654040110144627, guid: dc9d4ea5a1449e04ea293290dace9463, type: 3}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
+      propertyPath: LHandParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 5659559010445995513, guid: 427e4f339985afc49a782e0ac8ec2991, type: 3}
+    - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: RHandParts.Array.data[0]
       value: 
       objectReference: {fileID: 2267809457056059244, guid: b06188d29ae269a42b777c27bd5957be, type: 3}
@@ -381,6 +397,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9167708603139019306, guid: 63723d8ec66a84e47ab6747c6d769da3, type: 3}
     - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
+      propertyPath: RHandParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 1090127084373983640, guid: 1f195ccc62cd4d044b8367e3ca31a998, type: 3}
+    - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: BoosterParts.Array.data[0]
       value: 
       objectReference: {fileID: 1222957125684768493, guid: bc5c85c4d483d894e926b91b0a2d3e82, type: 3}
@@ -388,6 +408,10 @@ PrefabInstance:
       propertyPath: BoosterParts.Array.data[1]
       value: 
       objectReference: {fileID: 6929104537090743142, guid: 42f6737fd6aaf55469fb18937e8fc79e, type: 3}
+    - target: {fileID: 3541381387343759915, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
+      propertyPath: BoosterParts.Array.data[2]
+      value: 
+      objectReference: {fileID: 3080909210590962322, guid: 0c632131602db734f98d34991deb66d9, type: 3}
     - target: {fileID: 3541381387888466074, guid: 1dc51af06aaf1f444bc0fe1a4367859a, type: 3}
       propertyPath: m_Controller
       value: 
